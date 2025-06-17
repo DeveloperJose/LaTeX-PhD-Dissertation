@@ -1,0 +1,12 @@
+\chapter{Physics-Informed MANet for Glacial Ice Segmentation of the HKH Region}
+As my final step, I propose combining the Physics-Informed Network used for velocity prediction and the U-Net used for image segmentation to further improve the performance on the segmentation of ice in the HKH region. I will do this by trying two different methodologies. In the first methodology, I will simply create a two branch network the same way I did with the Physics-Informed + LSTM network where we just have to carefully connect the inputs and outputs of their respective branches correctly. In the second methodology, I will use a self-learning loss that will combine the losses of both networks into one and optimize them both at the same time. The self-learning combined loss will be as follows:
+
+\begin{equation} \label{eq:1}
+    L_{Combined} = \alpha * L_{UNET} + (1 - \alpha) * L_{PINNS}
+\end{equation}
+
+where $L_{Combined}$ is the new combined loss from both networks, $L_{UNET}$ is the loss of the UNet ice segmentation network and $L_{PINNS}$ is the loss of the Physics-Informed velocity prediction network. This loss is based on the self-learning boundary aware loss specified in \cite{Bibek2023}.
+
+The main challenge will be combining the datasets for the combined network as they were not taken at the same exact time and so the satellite images used for segmentation and the velocity images are slightly different. I do not believe this will present a major problem, as I have the script used to get both datasets so I will be able to control how far apart these datasets are in real time to minimize the error introduced by this problem. I will also try a newer segmentation architecture that has been shown to be better than UNet called MANet \cite{MANet} which I hypothesize will give me the best performance in the end.
+
+Lastly, I will develop a simple WebUI that allows glaciologists to feed their own hyperspectral satellite images to our trained models to get labeled masks of glacial ice in a format that can be loaded into QGIS to help them with their glacier mapping efforts.
