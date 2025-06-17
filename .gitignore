@@ -22,6 +22,8 @@
 *.snm
 *.vrb
 *.xdv
+*.bcf
+*.run.xml
 
 # Build directories
 _build/

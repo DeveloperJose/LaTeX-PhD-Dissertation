@@ -8,7 +8,6 @@ In fluid flow velocity prediction you model a system that describes some physica
     \label{fig:cfd_engine}
 \end{figure}
 
-
 \section{Long Short-Term Memory Networks (LSTMs) For Time Series Data}
 \begin{figure}[H] \centering
     \includegraphics[width=0.4\linewidth]{figures/neural_network.png}
@@ -162,7 +161,7 @@ where $t$ was the current timestep, $x_t$ was the current data sample, $x_t^u$ w
 \subsection{Experimental Results}
 The following table summarizes the results of the experiments and provides the mean squared error for the velocity components \textbf{U} and \textbf{V} for each model along with the total training time after 200 epochs. The experiments were performed using an NVIDIA RTX 3090 and every epoch took around 27 seconds for non-informed LSTM models and 30 seconds for physics-informed LSTM models.
 
-\begin{table}[h!] \centering
+\begin{table}[!ht] \centering
     \begin{tabular}{c|c|c|c}
         \textbf{Model} & \textbf{U} & \textbf{V} & \textbf{Time (min)} \\ \hline
         Baseline & 5.455 & 2.561 & 0.061 \\ \hline

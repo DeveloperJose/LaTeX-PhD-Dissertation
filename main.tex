@@ -1,0 +1,81 @@
+\documentclass[12pt]{report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}        % For including images with \includegraphics
+\usepackage{booktabs}        % For better-looking tables with \toprule, \midrule, \bottomrule
+\usepackage{setspace}        % For controlling line spacing (e.g., \doublespacing)
+\usepackage{lineno}          % For adding line numbers (e.g., useful for drafts)
+\usepackage{amsmath}         % For enhanced math formatting and environments (align, cases, etc.)
+\usepackage{pdflscape}       % For rotating pages (like landscape figures) in PDF output
+\usepackage{float}           % For better float positioning using [H] (here exactly)
+\usepackage{caption}         % For customizing captions (font size, spacing, etc.)
+\usepackage{subcaption}      % For subfigures or sub-tables with separate captions
+\usepackage{algpseudocode}   % For algorithm pseudocode (used with algorithm environment)
+\usepackage{algorithm}       % Defines the algorithm floating environment
+\usepackage{hyperref}        % Adds clickable links (TOC, references, URLs)
+\usepackage{xurl}            % Improves line-breaking of long URLs 
+\usepackage{utepcsthesis}    % Custom thesis formatting for UTEP (University of Texas at El Paso)
+\usepackage[utf8]{inputenc}  % Enables UTF-8 input encoding (for accented characters, symbols, etc.)
+\usepackage[T1]{fontenc}
+
+\usepackage[style=ieee, citestyle=numeric-comp, sorting=none, backend=biber]{biblatex}
+% biblatex: for managing bibliography
+% citestyle=numeric-comp: compact numeric citations like [1–3]
+% sorting=none: references are listed in citation order
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hfuzz=5pt                              % Surpress overfull hbox warnings below threshold
+\graphicspath{ {./figures/} }           % Set figure directory for convenience
+\linenumbers                            % Line numbers for easier draft feedback and editing
+\setcounter{tocdepth}{2}                % Set the table of contents depth (tocdepth) to the least significant section
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Custom %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://tex.stackexchange.com/questions/159290/how-can-i-place-a-vertical-rule-between-subfigures
+\newcommand{\rulesep}{\unskip\ \vrule\ }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Metadata %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Thesis %%%%%%
+\title{IMPROVING NEURAL NETWORKS TRAINED WITH LIMITED DATA BY DERIVING IMPROVEMENTS BASED ON KNOWLEDGE OF THE UNDERLYING PHYSICS INTERACTIONS}
+\author{Jose G. Perez}
+% \date{}
+
+%%%%%% Comittee %%%%%%
+\DeptName{Department of Computer Science}
+\CommitteeChair{Olac Fuentes, Chair, Ph.D.}
+\CommitteeMembers{Vinod Kumar, Ph.D.}
+                 {Saeid Tizpaz-Niari, Ph.D.}
+\GradSchoolDean{Stephen Crites, Ph.D.}
+
+%%%%%% References %%%%%%
+\addbibresource{library.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Begin Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%% Preface %%%%%%
+\begingroup
+\hfuzz=25pt
+\makesigpage
+\maketitlepage
+\tableofcontents
+\endgroup
+
+%%%%%% Chapters %%%%%%
+\include{acknowledgements}
+\include{abstract}
+\include{intro}
+\include{fluid_flow_prediction}
+\include{physics_informed_data_augmentation}
+\include{glacier_velocity_prediction}
+\include{pinns_glacier_segmentation}
+
+%%%%%% Bibliography %%%%%%
+\begingroup
+\hfuzz=25pt
+\printbibliography
+\endgroup
+
+%%%%%% CV %%%%%%
+% \include{vitae}
+
+\end{document}

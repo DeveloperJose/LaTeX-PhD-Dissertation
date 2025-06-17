@@ -207,6 +207,8 @@
 }
 
 \newcommand{\makesigpage}{
+\begingroup
+\hbadness=10000
 \begin{center}
 % title
 \@title\\[0.4in]
@@ -251,7 +253,7 @@
 \underline{\hspace{2.9in}}\\
 \@gradschooldean\\
 Dean of the Graduate School
-
+\endgroup
 \newpage}
 
 \newenvironment{CenteredPage}
@@ -280,7 +282,7 @@ by
 , \@authordegrees%
 \fi%
 \\[1.67in]
-THESIS PROPOSAL\\[1pc]
+THESIS \\[1pc]
 Presented to the Faculty of the Graduate School of\\[1pc]
 The University of Texas at El Paso\\[1pc]
 in Partial Fulfillment\\[1pc]
