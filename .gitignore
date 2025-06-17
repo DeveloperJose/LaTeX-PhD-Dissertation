@@ -1,0 +1,75 @@
+# LaTeX intermediate files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.idx
+*.ilg
+*.ind
+*.synctex.gz
+*.fdb_latexmk
+*.blg
+*.bbl
+*.brf
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Build directories
+_build/
+build/
+output/
+
+# PDF and other output files (optional: ignore if you commit the final PDF)
+*.pdf
+*.dvi
+*.ps
+
+# Editor backup and swap files
+*~
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+
+# VSCode settings (optional)
+.vscode/
+
+# TeXShop specific files (macOS)
+*.texpadtmp
+
+# SyncTeX control files
+.synctex.gz
+
+# Latexmk files
+.latexmkrc
+
+# Temporary files
+*.tmp
+
+# Folder for generated bibliography or glossaries (if you use separate dirs)
+bibtex/
+glossaries/
+
+# Ignore compiled python files if you use python scripts
+__pycache__/
+*.py[cod]
+
+# Misc
+*.fdb_latexmk
+*.fls
